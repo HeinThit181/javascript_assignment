@@ -1,0 +1,73 @@
+<html>
+  <head>
+    <title>Add New Item</title>
+  </head>
+  <body>
+    <form action="https://athiphat-mybackend-01.southeastasia.cloudapp.azure.com/api/product" method="POST" enctype="multipart/form-data">
+      <fieldset>
+        <legend>General Info</legend>
+        <p>
+          <label>Item Name:</label>
+          <input type="text" name="itemName" size="50" maxlength="500"/>
+        </p>
+        <p>
+          <label>Item Description:</label><br/>
+          <textarea name="itemDescription" cols="50" rows="5"></textarea>
+        </p>
+        <p>
+          <label>Cover Image:</label>
+          <input type="file" name="coverImage"/>
+        </p>
+        <p>
+          <label>Category:</label>
+          <select name="category">
+            <option value="notSpecified" selected>Not Specified</option>
+            <option value="consumption">Consumption</option>
+            <option value="household">Household</option>
+            <option value="electronic">Electronic</option>
+            <option value="gadget">Gadget</option>
+          </select>
+        </p>
+      </fieldset>
+      <fieldset>
+        <legend>Inventory & Pricing</legend>
+        <p>
+          <label>Inventory Amount:</label>
+          <input type="number" name="inventoryAmount" min="0"/>
+        </p>
+        <p>
+          <label>List Price:</label>
+          <input type="number" name="listPrice" min="0"/>
+        </p>
+      </fieldset>
+      <fieldset>
+        <legend>Available Store</legend>
+        <p>
+          <input type="checkbox" name="availableStore[]" value="Bangkok">
+          <label>Bangkok</label><br/>
+          <input type="checkbox" name="availableStore[]" value="Pattaya">
+          <label>Pattaya</label><br/>
+          <input type="checkbox" name="availableStore[]" value="Phuket">
+          <label>Phuket</label>
+        </p>
+      </fieldset>
+      <fieldset>
+        <legend>Status</legend>
+        <p>
+          <input type="radio" name="status" value="Active">
+          <label>Active</label><br/>
+          <input type="radio" name="status" value="Inactive">
+          <label>Inactive</label>
+        </p>
+      </fieldset>
+      <fieldset>
+        <legend>Staff Info</legend>
+        <p>
+          <label>Staff Email:</label>
+          <input type="email" name="staffEmail"/>
+        </p>
+      </fieldset>
+      <button type="submit">Submit Form</button>
+    </form>
+  </body>
+</html>
